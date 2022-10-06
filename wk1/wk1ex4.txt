@@ -1,0 +1,20 @@
+#maze
+#stage 0
+0 NE** -> X 1#no option to the right check next stage
+0 Nx** -> E 0#option for right go right and stay on stage
+0 x*** -> N 3#option forward go forward and to previous stage
+
+#stage 1
+1 *E*S -> X 2#no option to the right check next stage
+1 *E*x -> S 1#option for right go right and stay on stage
+1 *x** -> E 0#option forward go forward and to previous stage
+
+#stage 2
+2 **WS -> X 3#no option to the right check next stage
+2 **xS -> W 2#option for right go right and stay on stage
+2 ***x -> S 1#option forward go forward and to previous stage
+
+#stage 3
+3 N*W* -> X 0#no option to the right check next stage
+3 x*W* -> N 3#option for right go right and stay on stage
+3 **x* -> W 2#option forward go forward and to previous stage
