@@ -16,11 +16,15 @@ def rs():
 
 
 def rwpos(start, nstep):
+    """rwpos
+    random 
+    """
+    
     if nstep <= 0:
         return start
     else:
         nStart = start + rs()  # nStart is start + random -1 or 1
-        # print("start is", nStart)    #debug to see if correctly constant random between runs (add # infront to deactivate)
+        print("start is", nStart)    #debug to see if correctly constant random between runs (add # infront to deactivate)
         return rwpos(nStart, nstep - 1)
 
 
@@ -45,9 +49,8 @@ def ave_signed_displacement(numtrials):
     return average
 
 def ave_squared_displacement(numtrials):
-    lc = [rwpos_plain(0, 100) for x in range(numtrials)]
-    squared = lc **2
-    average = sum(squared) / len(squared)
+    lc = [rwpos_plain(0, 100)**2 for x in range(numtrials)]
+    average = sum(lc) / len(lc)
     return average
 
 def rwpos_plain(start, nstep,):
@@ -56,3 +59,14 @@ def rwpos_plain(start, nstep,):
     else:
         nStart = start + rs() 
         return rwpos_plain(nStart, nstep - 1)
+"""
+    Om de gemiddelde totale afwijking voor een
+    toevalsbeweging met 100 willekeurige stappen
+    te berekenen, heb ik rwpos_plain
+       
+
+    Zorg dat je ave_signed_displacement en
+    ave_squared_displacement beide ten minste één
+    keer uitvoert en de gegevens en het gemiddelde
+    hierin kopieert.
+"""
