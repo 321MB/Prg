@@ -69,4 +69,8 @@ def rwpos_plain(start, nstep,):
     ave_squared_displacement beide ten minste één
     keer uitvoert en de gegevens en het gemiddelde
     hierin kopieert.
+    In [6]: ave_squared_displacement(100)
+    Out[6]: 96.84
+    In [7]: ave_signed_displacement(10000)
+    Out[7]: -0.0708
 """
