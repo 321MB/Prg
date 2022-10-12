@@ -79,8 +79,12 @@ def randomize(x, chance_of_replacing):
 
 
 # Te schrijven functie #5: replace_some
+def replace_some(L, chance_of_replacing):
+    lc = [randomize(x, chance_of_replacing) for x in L]
+    return lc
 
-
+assert replace_some(range(40, 50), 0) == list(range(40, 50))
+assert replace_some([42], 1.0) != [42]
 #
 # de functies hieronder betreffen geluidsbewerking...
 #
