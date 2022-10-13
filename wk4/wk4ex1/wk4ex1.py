@@ -159,6 +159,25 @@ def flipflop(filename):
 
 
 # Te schrijven geluidsfunctie #1: reverse
+def reverse(filename):
+    print("Het originele geluid afspelen...")
+    play(filename)
+
+    print("Geluidsgegevens inlezen...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+    newsamps = samps[::-1]
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("De nieuwe geluidsgegevens opslaan...")
+    write_wav(new_sound_data, "out.wav")  # schrijf gegevens naar out.wav
+
+    print("Nieuw geluid afspelen...")
+    play('out.wav')
+
 
 
 # Te schrijven geluidsfunctie #2: volume
