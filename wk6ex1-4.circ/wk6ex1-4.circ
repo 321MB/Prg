@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.3.4" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="NewPins"/>
+    </tool>
+    <tool name="Probe">
+      <a name="appearance" val="NewPins"/>
+    </tool>
+    <tool name="Constant">
+      <a name="facing" val="south"/>
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1">
+    <tool name="PLA">
+      <a name="table" val=""/>
+    </tool>
+  </lib>
+  <lib desc="#Base" name="2">
+    <tool name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="MyXOR"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="2" map="Button2" name="Menu Tool"/>
+    <tool lib="2" map="Button3" name="Menu Tool"/>
+    <tool lib="2" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="2" name="Poke Tool"/>
+    <tool lib="2" name="Edit Tool"/>
+    <tool lib="2" name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="south"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate">
+      <a name="inputs" val="5"/>
+    </tool>
+    <tool lib="1" name="OR Gate">
+      <a name="inputs" val="5"/>
+    </tool>
+  </toolbar>
+  <circuit name="MyXOR">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="MyXOR"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="2" loc="(344,43)" name="Text">
+      <a name="text" val="Hier kan je een XOR-schakeling bouwen"/>
+    </comp>
+    <comp lib="2" loc="(362,75)" name="Text">
+      <a name="text" val="Je kan de tutorial volgen (in het Help-menu; &quot;tutorial&quot;) of zelf de oplossing bedenken..."/>
+    </comp>
+  </circuit>
+  <circuit name="FullAdder">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="FullAdder"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="0" loc="(180,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="0" loc="(280,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="CarryIn"/>
+    </comp>
+    <comp lib="0" loc="(540,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Sum"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(540,470)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="CarryOut"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(70,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="1" loc="(100,100)" name="NOT Gate"/>
+    <comp lib="2" loc="(173,25)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="3 invoerbits:  X,  Y en CarryIn"/>
+    </comp>
+    <comp lib="2" loc="(612,38)" name="Text">
+      <a name="text" val="Hier kan je een FULL-ADDERschakeling bouwen"/>
+    </comp>
+    <comp lib="2" loc="(615,64)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="(1) teken de andere vier rails   (2) je hebt 8 AND-poorten nodig    (3)  je hebt twee OR-poorten nodig"/>
+    </comp>
+    <comp lib="2" loc="(686,332)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="twee uitvoerbits:  Sum en CarryOut"/>
+    </comp>
+    <wire from="(100,100)" to="(100,640)"/>
+    <wire from="(70,100)" to="(70,590)"/>
+    <wire from="(70,80)" to="(70,100)"/>
+  </circuit>
+  <circuit name="Een_4bit_Ripple_Carry_Adder">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Een_4bit_Ripple_Carry_Adder"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="0" loc="(120,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X3"/>
+    </comp>
+    <comp lib="0" loc="(170,390)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="label" val="Sum3"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(230,110)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y2"/>
+    </comp>
+    <comp lib="0" loc="(260,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X2"/>
+    </comp>
+    <comp lib="0" loc="(280,390)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="label" val="Sum2"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(350,110)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y1"/>
+    </comp>
+    <comp lib="0" loc="(390,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X1"/>
+    </comp>
+    <comp lib="0" loc="(390,390)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="label" val="Sum1"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(480,110)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y0"/>
+    </comp>
+    <comp lib="0" loc="(500,390)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="label" val="Sum0"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(520,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X0"/>
+    </comp>
+    <comp lib="0" loc="(60,390)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="label" val="Sum4"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(600,90)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(90,110)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y3"/>
+    </comp>
+    <comp lib="2" loc="(313,31)" name="Text">
+      <a name="text" val="Hier kan je een 4-bit-RIPPLE-CARRY-ADDERschakeling bouwen"/>
+    </comp>
+    <comp lib="2" loc="(694,123)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="8 invoerbits"/>
+    </comp>
+    <comp lib="2" loc="(700,414)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="5 uitvoerbits"/>
+    </comp>
+    <wire from="(600,90)" to="(600,150)"/>
+  </circuit>
+  <circuit name="Een_4bit_vermenigvuldiger">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Een_4bit_vermenigvuldiger"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="0" loc="(110,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y1"/>
+    </comp>
+    <comp lib="0" loc="(140,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y0"/>
+    </comp>
+    <comp lib="0" loc="(280,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X3"/>
+    </comp>
+    <comp lib="0" loc="(400,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X2"/>
+    </comp>
+    <comp lib="0" loc="(50,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y3"/>
+    </comp>
+    <comp lib="0" loc="(500,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X1"/>
+    </comp>
+    <comp lib="0" loc="(610,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X0"/>
+    </comp>
+    <comp lib="0" loc="(680,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z7"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,160)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z6"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,240)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z5"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,320)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z4"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,400)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z3"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,480)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z2"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,560)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z1"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(680,640)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z0"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(80,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y2"/>
+    </comp>
+    <comp lib="2" loc="(335,789)" name="Text">
+      <a name="text" val="See the problem for details on this hint:   Build a 4x1-bit multiplier first!"/>
+    </comp>
+    <comp lib="2" loc="(450,26)" name="Text">
+      <a name="text" val="tweede factor (4 bits)"/>
+    </comp>
+    <comp lib="2" loc="(684,718)" name="Text">
+      <a name="text" val="product (8 bits)"/>
+    </comp>
+    <comp lib="2" loc="(844,31)" name="Text">
+      <a name="text" val="4-bit-VERMENIGVULDIGINGSschakeling"/>
+    </comp>
+    <comp lib="2" loc="(850,688)" name="Text">
+      <a name="text" val="minst significante (laagste) uitvoerbit"/>
+    </comp>
+    <comp lib="2" loc="(859,89)" name="Text">
+      <a name="text" val="meest significante (hoogste) uitvoerbit"/>
+    </comp>
+    <comp lib="2" loc="(94,26)" name="Text">
+      <a name="text" val="factor (4 bits)"/>
+    </comp>
+  </circuit>
+  <circuit name="Een_3bij2_deler">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Een_3bij2_deler"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="0" loc="(200,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y1"/>
+    </comp>
+    <comp lib="0" loc="(320,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y0"/>
+    </comp>
+    <comp lib="0" loc="(520,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X1"/>
+    </comp>
+    <comp lib="0" loc="(610,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="X0"/>
+    </comp>
+    <comp lib="0" loc="(690,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z2"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(690,360)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z1"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(690,500)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z0"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(690,630)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Error"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(80,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Y2"/>
+    </comp>
+    <comp lib="2" loc="(191,31)" name="Text">
+      <a name="text" val="Teller (3 bits: Y2 Y1 Y0)"/>
+    </comp>
+    <comp lib="2" loc="(566,29)" name="Text">
+      <a name="text" val="Noemer (2 bits: X1 X0)"/>
+    </comp>
+    <comp lib="2" loc="(703,702)" name="Text">
+      <a name="text" val="Quotiënt (4 bits: Z2 Z1 Z0 en Error)"/>
+    </comp>
+    <comp lib="2" loc="(805,62)" name="Text">
+      <a name="text" val="3-bij-2-bit-DELINGSschakeling"/>
+    </comp>
+  </circuit>
+  <circuit name="Een_2bit_decoder">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Een_2bit_decoder"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="2" loc="(414,47)" name="Text">
+      <a name="text" val="2-bit-DECODERschakeling (bonusopgave)"/>
+    </comp>
+  </circuit>
+  <circuit name="Een_12nGb_geheugen">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Een_12nGb_geheugen"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="clabelup" val="east"/>
+    <comp lib="2" loc="(415,47)" name="Text">
+      <a name="text" val="12-nanogigabit-GEHEUGENschakelin (bonusopgave)"/>
+    </comp>
+  </circuit>
+</project>
