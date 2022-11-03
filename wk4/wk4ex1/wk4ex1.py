@@ -3,6 +3,7 @@
 # Naam:
 # Probleemomschrijving: Geluidsbewerking
 
+from fileinput import filename
 import time
 import random
 import math
@@ -181,15 +182,91 @@ def reverse(filename):
 
 
 # Te schrijven geluidsfunctie #2: volume
+def volume(filename, scale_factor):
+    print("Het originele geluid afspelen...")
+    play(filename)
 
+    print("Geluidsgegevens inlezen...")
+    sound_data = [0, 0]
+    read_wav(filename,  sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+    newsamps = scale(samps, scale_factor)
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("De nieuwe geluidsgegevens opslaan...")
+    write_wav(new_sound_data, "out.wav")  # schrijf gegevens naar out.wav
+
+    print("Nieuw geluid afspelen...")
+    play('out.wav')
 
 # Te schrijven geluidsfunctie #3: static
+def static(filename, probability_of_static):
+    print("Het originele geluid afspelen...")
+    play(filename)
+
+    print("Geluidsgegevens inlezen...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+    newsamps = replace_some(samps, probability_of_static)
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("De nieuwe geluidsgegevens opslaan...")
+    write_wav(new_sound_data, "out.wav")  # schrijf gegevens naar out.wav
+
+    print("Nieuw geluid afspelen...")
+    play('out.wav')
 
 
 # Te schrijven geluidsfunctie #4: overlay
+def overlay(filename1, filename2):
+    print("Het originele geluid afspelen...")
+    play(filename1)
+    play(filename2)
+
+    print("Geluidsgegevens inlezen...")
+    sound_data1 = [0, 0]
+    sound_data2 = [0, 0]
+    read_wav(filename1, sound_data1)
+    read_wav(filename2, sound_data2)
+    samps = sound_data1[0]
+    samps2 = sound_data2[0]
+    sr1 = sound_data1[1]
+    sr2 = sound_data2[1]
+    newsamps = add_scale_2(samps, samps2, .5, .5)
+    newsr = sr1 + sr2
+    new_sound_data = [newsamps, newsr]
+
+    print("De nieuwe geluidsgegevens opslaan...")
+    write_wav(new_sound_data, "out.wav")  # schrijf gegevens naar out.wav
+
+    print("Nieuw geluid afspelen...")
+    play('out.wav')
 
 
 # Te schrijven geluidsfunctie #5: echo
+def echo(filename, time_delay):
+    print("Het originele geluid afspelen...")
+    play(filename)
+
+    print("Geluidsgegevens inlezen...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+    newsamps = add_scale_2( )
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("De nieuwe geluidsgegevens opslaan...")
+    write_wav(new_sound_data, "out.wav")  # schrijf gegevens naar out.wav
+
+    print("Nieuw geluid afspelen...")
+    play('out.wav')
 
 
 # Hulpfunctie om pure tonen te genereren
