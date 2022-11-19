@@ -1,6 +1,6 @@
 # Programmeren I, Week 3 Opgave 3
 # Bestandsnaam: wk3ex3.py
-# Naam:mick
+# Naam:
 # Probleemomschrijving: List comprehensions
 
 

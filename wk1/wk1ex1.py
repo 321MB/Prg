@@ -1,5 +1,5 @@
 # Progameren 1 p1
-# naam: Mick
+# naam:
 ####################
 
 

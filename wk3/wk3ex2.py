@@ -1,6 +1,6 @@
 # Programmeren I, week 3 opgave 2
 # Bestandsnaam: wk3ex2.py
-# Naam: MICK
+# Naam: 
 # Probleemomschrijving: Slaapwandelende student
 
 import random
