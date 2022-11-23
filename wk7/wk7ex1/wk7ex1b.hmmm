@@ -5,8 +5,29 @@
 # Practicumopgave #2: Breid deze code uit zodat dit je random-number generator wordt:
 #   (Merk op: dit is begincode die de invoer op de juiste manier verwerkt...)
 
-00 read r1    # voer a in
-01 read r2    # voer c in
-02 read r3    # voer m in
-03 read r4    # voer X_0 in
-04 read r5    # voer N in
+
+00 read r1      # voer a in
+01 read r2      # voer c in
+02 read r3      # voer m in
+03 read r4      # voer X_0 in
+04 read r5      # voer N in
+
+########### X_0 ########### 
+05 setn r6 0    # r6 = 0 
+06 mul r6 r1 r4 # r6 = a * X_0
+07 jumpn 11     # spring naar 11 
+
+########### X_n ########### 
+08 copy r4 r6   # x_1 = r6
+09 setn r6 0    # r6 = 0
+10 mul r6 r1 r4 # r6 = a * X_n
+
+### rest van berekening ###
+11 add r6 r6 r2 # r6 = r6 + c 
+12 mod r6 r6 r3 # r6 = r6 % m 
+13 write r6     # geeft r6, antwoord van de formule terug
+
+######### N check ######### 
+14 addn r5 -1   # N -1
+15 jgtzn r5 08  # N > 0 naar 08
+16 halt 
